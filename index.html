@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f4f4f4, #dfe6e9);
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            text-align: center;
+            padding: 2rem;
+            background: #5a9;
+            color: #fff;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+        .container {
+            padding: 2rem;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .highlight {
+            background: #ffdd57;
+            color: #333;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .highlight h2 {
+            margin-top: 0;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 1rem auto;
+            display: block;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .skill {
+            background: #eee;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+            text-align: center;
+        }
+        .contact-item {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+        <nav>
+            <a href="#about">Sobre Mim</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#projects">Projetos</a>
+            <a href="#contact">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Olá, eu sou Miriam!</h1>
+        <p>Aluna de Administração, pesquisadora e apaixonada por dados.</p>
+    </section>
+
+    <main class="container">
+        <section id="about">
+            <div class="card">
+                <h2>Sobre Mim</h2>
+                <p>Sou uma aluna  do 5º período de Administração. Tenho experiência em análise de dados, </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="card">
+                <h2>Habilidades</h2>
+                <div class="skills">
+                    <span class="skill">Análise de Dados</span>
+                    <span class="skill">Planejamento Estratégico</span>
+                    <span class="skill">Gestão de Projetos</span>
+                    <span class="skill">Comunicação</span>
+                    <span class="skill">Tecnologias Emergentes</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="highlight">
+            <h2>Habitos</h2>
+            <p>Gosto de ouvir músicas e os meus gêneros musicais favoritos são: Rock, Pop, MPB.</p>
+            <p1> "Entre os prazeres que enriquecem minha vida, destaco o preço por preparar refeições, explorando os sabores e a arte da gastronomia. A leitura e a escrita ocupam um lugar especial no meu cotidiano, permitindo-me viajar por histórias, pensamentos e ideias que ampliam minha visão do mundo. Momentos de tranquilidade são complementados por caminhadas ao ar livre, que me conectam à natureza, e pela avaliação de séries e documentários, os quais alimentam minha curiosidade e conhecimento. Tenho uma reportagem especial com o clima ameno, encontrando conforto e inspiração nos dias frescos e chuvosos, que trazem consigo uma sensação de renovação e introspecção."</p1>
+        </section>
+
+        <section id="projects">
+            <div class="card">
+                <h2>Profissional</h2>
+                <ul>
+                    <li><strong></strong> Analise e pesquisa em Ciências Sociais.</li>
+                    <li><strong></strong> Estudo sobre a estrutura tributária brasileira e desigualdade.</li>
+                    <li><strong></strong> Relatórios personalizados baseados em questionários.</li>
+                    <li><strong></strong> Criação de artigos cientificos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="card">
+                <h2>Contato</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <p><strong>Email:</strong> <a href="mailto:mMiriaam553@gmail.com">miriaam553@gmail.com</a></p>
+                        
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Miriam - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
