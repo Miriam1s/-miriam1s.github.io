@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Dinâmico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .form-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #202124;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: #5f6368;
+        }
+
+        .form-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .form-footer button {
+            background-color: #4285f4;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .form-footer button:hover {
+            background-color: #357ae8;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .add-question {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .add-question button {
+            background-color: #34a853;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-question button:hover {
+            background-color: #2c8a44;
+        }
+
+        .remove-button {
+            background-color: #ea4335;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .remove-button:hover {
+            background-color: #c5221f;
+        }
+
+        .options {
+            margin-top: 10px;
+        }
+
+        .options div {
+            margin-bottom: 8px;
+        }
+
+        .add-option {
+            background-color: #fbbc04;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .add-option:hover {
+            background-color: #e09d00;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">Formulário Dinâmico</div>
+        <form id="dynamic-form">
+            <div id="questions-container" class="question-container">
+                <!-- Perguntas dinâmicas serão adicionadas aqui -->
+            </div>
+            <div class="add-question">
+                <button type="button" id="add-question-button">Adicionar Pergunta</button>
+            </div>
+            <div class="form-footer">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const questionsContainer = document.getElementById('questions-container');
+        const addQuestionButton = document.getElementById('add-question-button');
+
+        let questionCount = 0;
+
+        function addQuestion() {
+            questionCount++;
+
+            const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question');
+            questionDiv.setAttribute('id', `question-${questionCount}`);
+
+            questionDiv.innerHTML = `
+                <div class="form-group">
+                    <label for="question-text-${questionCount}">Pergunta ${questionCount}</label>
+                    <input type="text" id="question-text-${questionCount}" name="question-text-${questionCount}" placeholder="Digite a pergunta" disabled>
+                </div>
+                <div class="options" id="options-${questionCount}">
+                    <!-- Opções serão adicionadas aqui -->
+                </div>
+                <button type="button" class="add-option" onclick="addOption(${questionCount})">Adicionar Opção</button>
+                <button type="button" class="remove-button" onclick="removeQuestion(${questionCount})">Remover Pergunta</button>
+            `;
+
+            questionsContainer.appendChild(questionDiv);
+        }
+
+        function addOption(questionId) {
+            const optionsDiv = document.getElementById(`options-${questionId}`);
+
+            const optionCount = optionsDiv.childElementCount + 1;
+            const optionDiv = document.createElement('div');
+
+            optionDiv.innerHTML = `
+                <input type="radio" id="question-${questionId}-option-${optionCount}" name="question-${questionId}" value="Opção ${optionCount}">
+                <label for="question-${questionId}-option-${optionCount}">Opção ${optionCount}</label>
+            `;
+
+            optionsDiv.appendChild(optionDiv);
+        }
+
+        function removeQuestion(id) {
+            const questionDiv = document.getElementById(`question-${id}`);
+            if (questionDiv) {
+                questionsContainer.removeChild(questionDiv);
+            }
+        }
+
+        addQuestionButton.addEventListener('click', addQuestion);
+        <script>
+    const questionsContainer = document.getElementById('questions-container');
+    const addQuestionButton = document.getElementById('add-question-button');
+
+    let questionCount = 0;
+
+    function addQuestion() {
+        questionCount++;
+
+        const questionDiv = document.createElement('div');
+        questionDiv.classList.add('question');
+        questionDiv.setAttribute('id', `question-${questionCount}`);
+
+        questionDiv.innerHTML = `
+            <div class="form-group">
+                <label for="question-text-${questionCount}">Pergunta ${questionCount}</label>
+                <input type="text" id="question-text-${questionCount}" name="question-text-${questionCount}" placeholder="Digite a pergunta">
+            </div>
+            <div class="options" id="options-${questionCount}">
+                <!-- Opções serão adicionadas aqui -->
+            </div>
+            <button type="button" class="add-option" onclick="addOption(${questionCount})">Adicionar Opção</button>
+            <button type="button" class="remove-button" onclick="removeQuestion(${questionCount})">Remover Pergunta</button>
+        `;
+
+        questionsContainer.appendChild(questionDiv);
+    }
+
+    function addOption(questionId) {
+        const optionsDiv = document.getElementById(`options-${questionId}`);
+
+        const optionCount = optionsDiv.childElementCount + 1;
+        const optionDiv = document.createElement('div');
+
+        optionDiv.innerHTML = `
+            <input type="radio" id="question-${questionId}-option-${optionCount}" name="question-${questionId}" value="Opção ${optionCount}">
+            <label for="question-${questionId}-option-${optionCount}">Opção ${optionCount}</label>
+        `;
+
+        optionsDiv.appendChild(optionDiv);
+    }
+
+    function removeQuestion(id) {
+        const questionDiv = document.getElementById(`question-${id}`);
+        if (questionDiv) {
+            questionsContainer.removeChild(questionDiv);
+        }
+    }
+
+    function finalizeForm() {
+        const inputs = document.querySelectorAll('input[type="text"]');
+        inputs.forEach(input => {
+            input.setAttribute('readonly', true); // Transforma em apenas leitura
+        });
+
+        const addOptionButtons = document.querySelectorAll('.add-option, .remove-button');
+        addOptionButtons.forEach(button => {
+            button.style.display = 'none'; // Esconde os botões de edição
+        });
+    }
+
+    addQuestionButton.addEventListener('click', addQuestion);
+
+    // Botão para finalizar o formulário
+    const formFooter = document.querySelector('.form-footer');
+    const finalizeButton = document.createElement('button');
+    finalizeButton.type = 'button';
+    finalizeButton.textContent = 'Finalizar Formulário';
+    finalizeButton.style.marginRight = '10px';
+    finalizeButton.onclick = finalizeForm;
+    formFooter.insertBefore(finalizeButton, formFooter.firstChild);
+</script>
+</body>
+</html>
